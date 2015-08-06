@@ -46,6 +46,22 @@
             <param-value>http://localhost:8080/proxywps</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>JavaScriptExecutingProxy</servlet-name>
+        <servlet-class>gov.usgs.cida.proxy.JavaScriptExecutingProxy</servlet-class>
+        <init-param>
+            <param-name>web-driver-timeout-param</param-name>
+            <param-value>10000</param-value>
+        </init-param>
+        <init-param>
+            <param-name>web-driver-url-param</param-name>
+            <param-value>localhost:8910</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JavaScriptExecutingProxy</servlet-name>
+        <url-pattern>*?_escaped_fragment</url-pattern>
+    </servlet-mapping>
 	<servlet-mapping>
         <servlet-name>GeoserverProxy</servlet-name>
          <url-pattern>/proxygeoserver/*</url-pattern>
